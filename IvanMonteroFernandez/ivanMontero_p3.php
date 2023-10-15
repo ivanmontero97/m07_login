@@ -16,44 +16,31 @@
      $surname = $_POST['surname'];
      $password =$_POST['password'];
      $email = $_POST['email'];
-     
-     if($_POST['alumnat'] != null){
-        $alumnat = $_POST['alumnat'];
-     } else {
-    
-     $professorat =$_POST['professorat'];
-     }
-
-
-     $activado =$_POST['active'];
-     $desactivado = $_POST['active'];
-     
-     $active;
-     $rol ;
-
+     $active = $_POST['active'];
+     $rol=$_POST['rol'];
      //Cadena de conexion
     define("DB_HOST","localhost");
     define("DB_NAME","users");
     define("DB_USER","root");
     define("DB_PSW",'');
     
-    $active = $activado != null ? $activado : $desactivado;
-    $rol = $alumnat != null ? $alumnat : $professorat;
-    
     $connect = mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
 
-    $query = "INSERT INTO `user`(`user_id`, `name`, `surname`, `password`, `email`, `rol`, `active`) 
-    VALUES ('$user_id','$name','$surname','$password','$email','$rol','$active')" ;
    
     if(!$connect)
     {
         echo "Error de conexión : " . mysqli_connect_error();
     } else {
+        $rol=$_POST['rol'];
+      
+
         
+    $query = "INSERT INTO `user`(`user_id`, `name`, `surname`, `password`, `email`, `rol`, `active`) 
+    VALUES ('$user_id','$name','$surname','$password','$email','$rol','$active')" ;
 
        mysqli_query($connect,$query);
 
-        echo "Todo ha saludo bien";
+        header('Location:resultat.php');
     }
     mysqli_close($connect);
 
