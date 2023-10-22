@@ -29,6 +29,7 @@
 </div>
 <div>
     <p>Elige un rol</p>
+        <div id="mensaje-error-rol" style="color:red"></div>
         <input type="radio" id="adminCheckbox" name="rol" value="alumnat">
         <label for="adminCheckbox">alumnat</label>
 
@@ -37,6 +38,7 @@
 </div>
 <div>
     <p>Elige un estado</p>
+    <div id="mensaje-error-active" style="color:red"></div>
     <input type="radio" id="activadoCheckbox" name="active" value="0">
     <label for="activadoCheckbox">Activado</label>
 
@@ -47,7 +49,7 @@
    </form>
    <br>
    <p> ¿Ya tienes una cuenta creada ?</p>
-   <a href="login.html"><b>Iniciar sesión</b></a>
+   <a id="volver-login" href="login.html"><b>Iniciar sesión</b></a>
 
 </body>
 </html>
