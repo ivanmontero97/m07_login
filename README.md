@@ -29,7 +29,7 @@ header('Location: mostrar.php');
 ![Redireccionamiento](redireccion.jpg)
 ![Despues BD](DespuesBD.jpg)
 
-# ACTIVITAT
+# ACTIVITAT 3
 
 Després de desenvolupar la pàgina SignIn (per crear usuaris) haurem de desenvolupar la pàgina del login. 
 
@@ -53,6 +53,40 @@ Haurem de fer:
   - Haureu de crear i fer servir una funció per fer la consulta de tots els usuaris quan el rol és professor.
   - Les constants de la connexió s haurà de fer servir a través d’un fitxer 'dbConf.php'
   - S’haurà de fer servir el `try`, `catch`, i `finally` almenys en un dels casos.
+# ACTIVITAT 6
+
+Aquesta activitat serà la continuació de la pràctica del login.
+
+## Refactoritzar el fitxer de la validar.php:
+
+Després del login només haurem de validar que l’usuari existeix a les bases de dades. (S’ha de posar sempre codi defensiu).
+En el cas de que el login no sigui correcte tornarem a la pàgina del login, igual que la pràctica anterior.
+En canvi, en el cas de que el login sigui correcte:
+- Guardarem en sessió:
+  - Una variable de sessió per ‘LoggedIn” igual a true.
+  - Una variable de sessió pel nom.
+  - Una variable de sessió pel rol.
+  - Una variable de de sessió pel user_id.
+- Ens dirigirem en una nova pàgina d’inici: index.php
+
+## Bones pràctiques:
+
+L’objectiu d’aquest punt és la de millorar el codi, la seva estructura i entendre que s’ha de separar la lògica de negoci amb mostrar la informació de l’usuari per pantalla.
+
+- Crear una pàgina d’inici de l’aplicació (index.php)
+  - Mostrarem amb una etiqueta H2: “Hola” . $variable_sessio_nom. “ ets un ”.$variable_sessio_rol.
+
+En el cas de ser un professor, s’haurà de fer una consulta per mostrar tots els usuaris de la BBDD (igualment que a la pràctica anterior però l’haurem de fer en la pàgina d’inici), en aquest cas es mostrarà a través d’una taula.
+
+- Afegirem dos enllaços a la pàgina:
+  1. Mostrar informació detallada de l’usuari.
+     - Anirem a una pàgina on consultarem a les bases de dades tots els camps de les bases de dades de l’usuari.
+     - Aquest enllaç s’haurà de fer a través del mètode GET passant el valor de ID de l’usuari.
+  2. Desconnectar. (Tancarem la sessió)
+     - Serà un fitxer php on farem el procés de tancar sessió.
+     - Un cop fet tots els passos correctament ens redirigirà a la pàgina d’inici.
+
+**Important:** Totes les pàgines que ens trobem després de fer el login, han de tenir el control de que si no hem fet un login han de redireccionar a la pantalla del login.
 
   ![Registro Alumno](/IvanMonteroFernandez/capturasParaReadMe/PracticaLogin/RegistroAlumno.png)
   ![Registro Alumno P3](/IvanMonteroFernandez/capturasParaReadMe/PracticaLogin/usuarioGuardado.)
