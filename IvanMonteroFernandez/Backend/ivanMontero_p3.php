@@ -39,7 +39,7 @@
     {
         global $active;
         if(isset($_POST['active'])){
-            $rol=$_POST['active'];
+            $active=$_POST['active'];
             return true;
         }
         return false;
