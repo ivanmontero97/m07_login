@@ -7,8 +7,8 @@
 </head>
 <body>
     <p>S'ha guardat l'usuari correctament</p>
-    <a href="../Frontend/login.html"><b>Iniciar sesión</b></a>
+    <a href="../../../Frontend/login.html"><b>Iniciar sesión</b></a>
     <br>
-    <a href="../Frontend/practica3.html"><b>Registrar otro usuario</b></a>
+    <a href="../../../Frontend/practica3.html"><b>Registrar otro usuario</b></a>
 </body>
 </html>

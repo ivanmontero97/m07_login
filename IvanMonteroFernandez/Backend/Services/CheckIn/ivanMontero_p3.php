@@ -11,7 +11,7 @@
 <body>
     <?php
 
-    include "../Backend/ConnectionsConf/dbConfig.php";
+    include "/xampp/htdocs/M07_Servidor/m07_login/IvanMonteroFernandez/Backend/ConnectionsConf/dbConfig.php";
 
     //Post de los inputs
     $user_id = $_POST["user_id"];

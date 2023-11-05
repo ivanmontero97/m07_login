@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="formulario-login" method="POST" action="../Backend/Services/Login/backendLogin.php">
+    <!-- He tenido que crear este login porque cuando hay un fallo en el registro y hago un include del login.html
+    no me deja iniciar sesión correctamente ya que la URL es distinta y no tengo forma de arreglarlo sin utilizar Buffers
+    que no se utilizarlos (Esto lo deduzco según internet). -->
+
+    <form id="formulario-login" method="POST" action="backendLogin.php">
         <div>
             <label>Introduce el <b>email</b></b></label>
 
@@ -28,6 +32,5 @@
     <br>
     <p>¿Aún no tienes cuenta? </p>
      <a href="practica3.html">  <b>Crear cuenta</b> </a>
-   
 </body>
 </html>

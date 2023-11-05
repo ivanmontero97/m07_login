@@ -10,7 +10,7 @@
         session_abort();
         session_destroy();
         $_SESSION["loggedIn"] = false;
-        header('location:../Frontend/login.html');
+        header('location:../../../Frontend/login.html');
     ?>
 </body>
 </html>

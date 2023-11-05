@@ -1,5 +1,5 @@
 <?php
-include "../Backend/ConnectionsConf/dbConfig.php"; //Para tener las variables de la cadena conexion a la BD
+include "../../ConnectionsConf/dbConfig.php"; //Para tener las variables de la cadena conexion a la BD
 
 $emailLogin = $_POST["emailLogin"]; //Los inputs de tipo texto , si se envían sin valor , por defecto serán cadena vacía y no null . Es un estándar HTML y PHP.
 $passwordLogin = $_POST["passwordLogin"];
@@ -38,12 +38,13 @@ try {
 
                
             } else {
-                include "../Frontend/login.html"; //El Include da muchos errores con las rutas hay que tener cuidado, a veces no las reconoce con "/" o "../" de manerá automática y hay que picarlas a mano.
-                 echo"<br><p style= color:red ><b>Los datos introducidos no son válidos , por favor intentalo de nuevo</b><p><br>";   
+                include "loginParaFallos.php"; //El Include da muchos errores con las rutas hay que tener cuidado, a veces no las reconoce con "/" o "../" de manerá automática y hay que picarlas a mano.
+                echo"<br><p style= color:red ><b>Los datos introducidos no son válidos , por favor intentalo de nuevo</b><p><br>";   
+            
             }
         //Si el usuario no ha rellenado los campos del login
         } else {
-            include "../Frontend/login.html"; //El Include da muchos errores con las rutas hay que tener cuidado, a veces no las reconoce con "/" o "../" de manerá automática y hay que picarlas a mano.
+            include "loginParaFallos.php"; //El Include da muchos errores con las rutas hay que tener cuidado, a veces no las reconoce con "/" o "../" de manerá automática y hay que picarlas a mano.
             echo"<br><p style= color:red ><b>Por favor rellena el email y/o contraseña correctamente</b><p><br>";
         
         }
@@ -57,9 +58,5 @@ try {
 }
 
 
-//Defino una función para poner los enlaces de vuelta en los distintos resultados que nos lleve  a los distintos html
-function routesHTML(){
-    ?><br><a href="../Frontend/login.html"><b>Volver a probar los resultados iniciando sesión</b></a><?php
-    ?><br><a href="../Frontend/practica3.html"><b>Registrar otro usuario</b></a><?php
-}
+
 
