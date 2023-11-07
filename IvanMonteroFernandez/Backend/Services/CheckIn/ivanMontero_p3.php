@@ -69,7 +69,7 @@
 
                 header('Location:resultat.php'); //Nos devuelve el resultado de la consulta 
             } else {
-                include "../Frontend/practica3.html";
+                include "../../../Frontend/practica3.html";
                 if (!validaciones()) {
                     echo "<br><p style= color:red ><b>Por favor rellena todos los campos con datos válidos y no vacíos.</b><p><br>";
                 }
